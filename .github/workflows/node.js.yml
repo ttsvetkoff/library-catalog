@@ -25,6 +25,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npx playwright install --with-deps
-    - run: npm run start & node ./server/server.js
-
+    - run:  |
+            npm run start & node ./server/server.js
+            sleep 10
+            npx playwright test tests/ui.test.js
     
